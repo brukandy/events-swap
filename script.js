@@ -5,6 +5,7 @@ const events = [
         badgeClass: 'evento',
         logo: 'loghi/io creo.png',
         description: 'L\'unico evento di formazione in Italia che unisce Crescita Personale ed Educazione finanziaria, a cui hanno già partecipato migliaia di persone per migliorare i propri risultati.',
+        url: 'https://iocreoilmiodestino.it/',
         cta: 'Scopri l\'evento'
     },
     {
@@ -12,6 +13,7 @@ const events = [
         badgeClass: 'evento',
         logo: 'loghi/donna leader.png',
         description: 'L\'evento dedicato alle donne che vogliono sviluppare leadership, autonomia e indipendenza, per guidare la propria vita e il proprio futuro professionale.',
+        url: '#',
         cta: 'Scopri l\'evento'
     },
     {
@@ -19,6 +21,7 @@ const events = [
         badgeClass: 'evento',
         logo: 'loghi/money maker.png',
         description: 'Il primo evento che porta il MOVIMENTO FIRE in Italia, dove riceverai gli strumenti per costruire una "macchina della libertà" per smettere di lavorare e vivere di rendita.',
+        url: 'https://www.money-maker.it/mms-ottobre-2025/',
         cta: 'Scopri l\'evento'
     }
 ];
@@ -139,6 +142,9 @@ function updateContent(index, animate = true) {
             eventLogo.querySelector('.logo-image').src = event.logo;
             description.textContent = event.description;
             cta.textContent = event.cta;
+            cta.href = event.url || '#';
+            cta.target = '_top';
+            cta.rel = 'noopener';
 
             // Fade in
             badge.classList.remove('fade-out');
@@ -165,6 +171,9 @@ function updateContent(index, animate = true) {
         eventLogo.querySelector('.logo-image').src = event.logo;
         description.textContent = event.description;
         cta.textContent = event.cta;
+        cta.href = event.url || '#';
+        cta.target = '_top';
+        cta.rel = 'noopener';
     }
 }
 
